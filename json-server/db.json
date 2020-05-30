@@ -1,0 +1,51 @@
+{
+  "dishes": [{
+      "id": 0,
+      "name": "Biryani",
+      "image": "images/biryani.png",
+      "s_price": "299",
+      "l_price": "499",
+      "description": "Biryani is a mixed rice dish with its origins among the Muslims of the Indian subcontinent. It can be compared to mixing a curry, later combining it with semi-cooked rice separately. This dish is especially popular throughout the Indian subcontinent, as well as among its diaspora."
+    },
+    {
+      "id": 1,
+      "name": "Palak Paneer",
+      "image": "images/palak_paneer.png",
+      "s_price": "299",
+      "l_price": "499",
+      "description": "Palak paneer is a vegetarian dish originating from the Indian subcontinent, consisting of paneer in a thick paste made from puréed spinach and seasoned with ginger, garlic, chili and other spices. Palak paneer may be called green paneer in some restaurants in the United States."
+    },
+    {
+      "id": 2,
+      "name": "Pizza",
+      "image": "images/pizza.png",
+      "s_price": "299",
+      "l_price": "499",
+      "description": "Pizza is a savory dish of Italian origin, consisting of a usually round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients baked at a high temperature, traditionally in a wood-fired oven. A small pizza is sometimes called pizzetta."
+    },
+    {
+      "id": 3,
+      "name": "Dumpling",
+      "image": "images/dumpling.png",
+      "s_price": "299",
+      "l_price": "499",
+      "description": "Dumpling is a broad classification for a dish that consists of pieces of dough (made from a variety of starch sources) wrapped around a filling, or of dough with no filling. The dough can be based on bread, flour or potatoes, and may be filled with meat, fish, cheese, vegetables, fruits or sweets."
+    },
+    {
+      "id": 4,
+      "name": "Noodles",
+      "image": "images/noodles.png",
+      "s_price": "299",
+      "l_price": "499",
+      "description": "Noodles are a type of food made from unleavened dough which is rolled flat and cut, stretched or extruded, into long strips or strings. Noodles can be refrigerated for short-term storage or dried and stored for future use. Noodles are usually cooked in boiling water, sometimes with cooking oil."
+    },
+    {
+      "id": 5,
+      "name": "Fried Chicken",
+      "image": "images/fried_chicken.png",
+      "s_price": "299",
+      "l_price": "499",
+      "description": "Southern fried chicken, also known simply as fried chicken, is a dish consisting of chicken pieces which have been coated in a seasoned batter and pan-fried, deep fried, or pressure fried. The breading adds a crisp coating or crust to the exterior of the chicken while retaining juices in the meat."
+    }
+  ]
+}
