@@ -1,36 +1,13 @@
 <table class="table">
   <tbody>
-    <div *ngIf="dishes">
+    <div *ngIf="dishes && isShow">
       <div *ngFor="let dish of dishes">
-        <tr>
-          <td><img src="{{ 'http://localhost:3000/' + dish.image }}"
-              class="rounded mx-auto d-block card-img-top img-fluid" alt="{{ dish.name }}"></td>
-          <td>
-            <h5 class="card-title">{{ dish.name |uppercase }}</h5>
-            <p class="card-text">{{ dish.description }}</p>
-            <p>
-              Size -- Price per Unit: &nbsp;
-              <select id="size" name="size">
-                <option value="small">Half -- {{dish.s_price |currency:'INR'}}</option>
-                <option value="large">Full -- {{dish.l_price |currency:'INR'}}</option>
-              </select>
-              &nbsp; &nbsp;
-              Quantity: &nbsp;
-              <input type="number" name="quantity" id="quantity" min="0" max="10" value=0>
-            </p>
-            <p>
-              <button type="button" class="btn btn-danger">ADD</button>
-            </p>
-
-          </td>
-        </tr>
+        <app-dishitem [dishItem]="dish"></app-dishitem>
       </div>
       <br>
       <p>
-        <button type="submit" class=" mx-auto d-block btn btn-lg btn-danger">
-          <a class="text-white" href="/pay">
-            CHECKOUT
-          </a>
+        <button type="submit" (click)="changeShow()" class=" mx-auto d-block btn btn-lg btn-danger">
+          CHECKOUT
         </button>
       </p>
     </div>
@@ -40,3 +17,35 @@
     </div>
   </tbody>
 </table>
+
+
+<br>
+<div class="container">
+  <div *ngIf="added_dishes.length === 0 && !isShow" class="alert alert-danger">
+    No Dish Added.
+  </div>
+  <div *ngIf="added_dishes.length > 0 && !isShow">
+    <div *ngFor="let dish of added_dishes">
+      <div class="card mb-3 text-center mx-auto d-block" style="max-width: 400px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ 'http://localhost:3000/' + dish.image }}" class="card-img" alt="{{ dish.name }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ dish.name | uppercase }}</h5>
+              <p class="card-text">Quantity: {{dish.qty}} &nbsp; Price: {{dish.price |currency:'INR'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div *ngIf="!isShow" class="card text-center mx-auto d-block" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">TOTAL AMOUNT TO PAY</h5>
+      <p class="card-text">{{ cartTotal | currency:"INR" }}</p>
+      <a href="" class="btn btn-danger">PAY NOW</a>
+    </div>
+  </div>

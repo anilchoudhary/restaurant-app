@@ -1,0 +1,22 @@
+<tr>
+  <td><img src="{{ 'http://localhost:3000/' + dishItem.image }}" class="rounded mx-auto d-block card-img-top img-fluid"
+      alt="{{ dishItem.name }}"></td>
+  <td>
+    <h5 class="card-title">{{ dishItem.name |uppercase }}</h5>
+    <p class="card-text">{{ dishItem.description }}</p>
+    <p>
+      Size -- Price per Unit: &nbsp;
+      <select id="size" name="size">
+        <option value="small">Half -- {{dishItem.s_price |currency:'INR'}}</option>
+        <option value="large">Full -- {{dishItem.l_price |currency:'INR'}}</option>
+      </select>
+      &nbsp; &nbsp;
+      Quantity: &nbsp;
+      <input type="number" name="quantity" id="quantity" min="0" max="10" value=0>
+    </p>
+    <p>
+      <button type="button" (click)="handleAddToCart()" class="btn btn-danger">ADD</button>
+    </p>
+
+  </td>
+</tr>
