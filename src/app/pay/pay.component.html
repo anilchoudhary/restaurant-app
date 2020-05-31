@@ -1,1 +1,30 @@
-<p>pay works!</p>
+<br>
+<div class="container">
+  <div *ngIf="added_dishes.length === 0" class="alert alert-danger">
+    No Dish Added.
+  </div>
+  <div *ngIf="added_dishes.length > 0">
+    <div *ngFor="let dish of added_dishes">
+      <div class="card mb-3 text-center mx-auto d-block" style="max-width: 400px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ 'http://localhost:3000/' + dish.image }}" class="card-img" alt="{{ dish.name }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ dish.name | uppercase }}</h5>
+              <p class="card-text">Quantity: 1 &nbsp; Price: {{dish.l_price |currency:'INR'}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="card text-center mx-auto d-block" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">TOTAL AMOUNT TO PAY</h5>
+      <p class="card-text">{{ cartTotal | currency:"INR" }}</p>
+      <a href="#" class="btn btn-danger">PAY NOW</a>
+    </div>
+  </div>

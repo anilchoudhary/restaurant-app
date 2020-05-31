@@ -4,6 +4,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PayComponent } from './pay/pay.component';
 
 export const routes: Routes = [
+  { component: MenuComponent, path: '' },
   { component: MenuComponent, path: 'menu' },
   { component: PayComponent, path: 'pay' },
 ];

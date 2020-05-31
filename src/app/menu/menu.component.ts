@@ -8,10 +8,7 @@ import { CommonService } from '../services/common.service';
 })
 export class MenuComponent implements OnInit {
   public dishes: any;
-  constructor(
-    private commonService: CommonService
-  ) // @Inject('URL') private URL
-  {}
+  constructor(private commonService: CommonService) {}
 
   ngOnInit(): void {
     this.commonService.getMenu().subscribe((result) => {
