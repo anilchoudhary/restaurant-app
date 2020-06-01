@@ -52,14 +52,14 @@ export class MenuComponent implements OnInit {
         id: dish.id,
         name: dish.name,
         image: dish.image,
-        qty: 1,
-        price: dish.l_price,
+        qty: dish.qty,
+        price: dish.price,
       });
     }
 
     this.cartTotal = 0;
     this.added_dishes.forEach((item) => {
-      this.cartTotal += item.qty * item.price;
+      this.cartTotal += item.price;
     });
   }
 

@@ -1,3 +1,9 @@
+<div *ngIf='alert' class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Added to your cart.</strong>
+  <button type="button" (click)="stopAlert()" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <tr>
   <td><img src="{{ 'http://localhost:3000/' + dishItem.image }}" class="rounded mx-auto d-block card-img-top img-fluid"
       alt="{{ dishItem.name }}"></td>
@@ -6,16 +12,17 @@
     <p class="card-text">{{ dishItem.description }}</p>
     <p>
       Size -- Price per Unit: &nbsp;
-      <select id="size" name="size">
-        <option value="small">Half -- {{dishItem.s_price |currency:'INR'}}</option>
-        <option value="large">Full -- {{dishItem.l_price |currency:'INR'}}</option>
+      <select id="size" #size name="size">
+        <option value="small">Half -- {{ 299 |currency:'INR'}}</option>
+        <option value="large">Full -- {{ 499 |currency:'INR'}}</option>
       </select>
       &nbsp; &nbsp;
       Quantity: &nbsp;
-      <input type="number" name="quantity" id="quantity" min="0" max="10" value=0>
+      <input type="number" #quantity name="quantity" id="quantity" min="1" max="10" value=1>
     </p>
     <p>
-      <button type="button" (click)="handleAddToCart()" class="btn btn-danger">ADD</button>
+      <button type="button" (click)="modifyDish(size.value, quantity.value); handleAddToCart();"
+        class="btn btn-danger">ADD</button>
     </p>
 
   </td>
